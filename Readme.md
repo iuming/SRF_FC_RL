@@ -1,7 +1,8 @@
 ![# SRF FC RL](assets/logo.png)
 [![GitHub Repo stars](https://img.shields.io/github/stars/iuming/SRF_FC_RL?style=social)](https://github.com/iuming/SRF_FC_RL/stargazers)
 [![GitHub Code License](https://img.shields.io/github/license/iuming/SRF_FC_RL)](LICENSE)
-[![GitHub last commit](https://img.shields.io/github/last-commit/iuming/SRF_FC_RL)](https://github.com/iuming/SRF_FC_RL/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/iuming/SRF_FC_RL)](https://github.com/iuming/SRF_FC_RL/commits/master)
+[![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/iuming/SRF_FC_RL/pulls)
 
 # Superconducting RadioFrequency cavity Frequency Control by Reinforcement Learning
 
