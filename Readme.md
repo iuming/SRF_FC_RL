@@ -49,7 +49,11 @@ project/
 
 ## Contributing
 
-If you want others to contribute to the project, provide contribution guidelines and contact information.
+We welcome contributions from the community. If you'd like to contribute, please follow these guidelines:
+- Fork the repository
+- Create a new branch
+- Make your changes
+- Submit a pull request
 
 ## License
 
@@ -57,9 +61,13 @@ This repository is licensed under the [LICENSE](LICENSE).
 
 ## Contact
 
-Provide contact information so users can reach out to you.
+For any questions, feedback, or suggestions, feel free to reach out to us:
 
-Feel free to customize this template to fit the specific needs of your project. If you have any specific requirements or need further assistance, please let me know. I'd be happy to help!
+- Email: [realiuming@qq.com](mailto:realiuming@qq.com)
+- GitHub: [GitHub Profile](https://github.com/iuming)
+- Twitter: [Twitter Profile](https://twitter.com/realiuming)
+
+We appreciate your input and will do our best to respond in a timely manner. Please be respectful in your communication and adhere to our code of conduct. If you have any specific requirements or need further assistance, please let me know. I'd be happy to help!
 
 ## Star History
 
