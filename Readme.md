@@ -58,4 +58,5 @@ Feel free to customize this template to fit the specific needs of your project. 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=iuming/SEF_FC_RL&type=Timeline)](https://star-history.com/#iuming/SEF_FC_RL&Timeline)
+![Star History Chart](https://api.star-history.com/svg?repos=iuming/SRF_FC_RL&type=Date)
+
