@@ -1,4 +1,8 @@
 ![# SRF FC RL](assets/logo.png)
+[![GitHub Repo stars](https://img.shields.io/github/stars/iuming/SRF_FC_RL?style=social)](https://github.com/iuming/SRF_FC_RL/stargazers)
+[![GitHub Code License](https://img.shields.io/github/license/iuming/SRF_FC_RL)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/iuming/SRF_FC_RL)](https://github.com/iuming/SRF_FC_RL/commits/main)
+
 # Superconducting RadioFrequency cavity Frequency Control by Reinforcement Learning
 
 Control the frequency of the particle accelerator's radio frequency superconducting cavity based on reinforcement learning algorithm.
@@ -48,7 +52,7 @@ If you want others to contribute to the project, provide contribution guidelines
 
 ## License
 
-Provide copyright information or license information for the project.
+This repository is licensed under the [LICENSE](LICENSE).
 
 ## Contact
 
