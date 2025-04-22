@@ -1,0 +1,25 @@
+# 训练配置
+train:
+  total_timesteps: 1000000
+  learning_rate: 0.0003
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gamma: 0.99
+  seed: 42
+
+# 环境配置
+env:
+  max_episode_steps: 10240
+  t_fill: 510
+  t_flat: 1300
+  pulsed: true
+
+logging:
+  tensorboard_dir: tensorboard_logs
+  log_interval: 1000
+
+# 评估配置
+evaluate:
+  num_episodes: 10
+  model_path: models/rf_control_model.zip

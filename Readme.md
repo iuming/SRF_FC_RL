@@ -33,19 +33,42 @@ python main.py --input input_file.txt --output output_file.txt
 Describe the directory structure of the project to help users understand the files and folders included in the project.
 
 ```
-project/
-│
-├── src/
-│   ├── main.py
-│   ├── utils/
-│   │   └── helper.py
-│
-├── data/
-│   ├── input_file.txt
-│   └── output/
-│
-└── README.md
+SRF_FC_RL/
+├── config/       # Configuration files
+├── envs/         # Environment implementations
+├── models/       # Trained models
+├── scripts/      # Training/Evaluation scripts
+├── utils/        # Utility modules
+├── README.md     # Project documentation
+└── requirements.txt # Dependency list
 ```
+
+## Installation Guide
+1. Create a virtual environment:
+```bash
+conda create -n RL python==3.13.2
+conda activate RL
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Train the Model
+```bash
+python scripts/train.py --config config/config.yaml
+```
+
+## Evaluate the Model
+```bash
+python scripts/evaluate.py --config config/config.yaml
+```
+
+## Notes
+1. Ensure that the CUDA environment is installed to enable GPU acceleration.
+2. Parameters in the configuration file can be adjusted based on actual requirements.
+3. Visualization results will automatically pop up after evaluation is completed.
 
 ## Contributing
 
