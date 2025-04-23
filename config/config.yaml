@@ -6,7 +6,7 @@ train:
   batch_size: 64
   n_epochs: 10
   gamma: 0.99
-  ent_coef: 0.5
+  ent_coef: 0.1
   seed: 42
 
 # 环境配置

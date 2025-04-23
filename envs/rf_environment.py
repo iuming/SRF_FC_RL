@@ -9,7 +9,8 @@ class RFEnvironment(gym.Env):
     def __init__(self, config):
         # 定义动作和观测空间
         self.action_space = gym.spaces.Box(low=-1e4, high=1e4, shape=(1,), dtype=np.float32)
-        self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(4,), dtype=np.float32)
+        self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(10,), dtype=np.float32)
+        self.action_history = [np.zeros(1) for _ in range(3)]
 
         # 通用参数
         self.Ts = 1e-6
@@ -65,6 +66,7 @@ class RFEnvironment(gym.Env):
         self.sim_len = 2048 * 500
         self.pul_len = 2048 * 20
         self.dw = 0
+        self.prev_dw = 0
 
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
@@ -81,17 +83,25 @@ class RFEnvironment(gym.Env):
         dw_piezo = 0
         vc, vr, self.dw, self.state_vc, self.state_m = self.sim_cav(S2, dw_piezo + dw_micr)
 
-
-        # 将 vc 转换为单一复数
         if isinstance(vc, np.matrix):
             vc = vc.item()
 
-        observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc)], dtype=np.float32)
+        dw_rate = (self.dw - self.prev_dw) / self.Ts if self.Ts > 0 else 0
+        dw_rate = dw_rate[0, 0] if isinstance(dw_rate, np.matrix) else dw_rate
+        action_history_array = np.concatenate(self.action_history)
+        # action_history_array = action_history_array.flatten()
+        action_history_array = np.ravel(action_history_array)
+
+
+        observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array], dtype=np.float32)
         info = {}
         return observation, info
 
     def step(self, action):
+        self.action_history.pop(0)
+        self.action_history.append(action)
         dw_piezo = 2 * np.pi * action[0]
+        prev_dw = self.dw
 
         S0, self.pha_src = self.sim_rfsrc()
 
@@ -106,22 +116,49 @@ class RFEnvironment(gym.Env):
 
         vc, vr, self.dw, self.state_vc, self.state_m = self.sim_cav(S2, dw_piezo + dw_micr)
 
-        # 将 vc 转换为单一复数
+
         if isinstance(vc, np.matrix):
             vc = vc.item()
 
+        if isinstance(vr, np.matrix):
+            vr = vr.item()
+
+        dw_rate = (self.dw - prev_dw) / self.Ts if self.Ts > 0 else 0
+        dw_rate = dw_rate[0, 0] if isinstance(dw_rate, np.matrix) else dw_rate
+
         try:
-            observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc)], dtype=np.float32)
+            action_history_array = np.concatenate(self.action_history)
+            # action_history_array = action_history_array.flatten()
+            action_history_array = np.ravel(action_history_array)
+            observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array], dtype=np.float32)
         except ValueError as e:
             print(f"Error creating observation array: {e}")
             print(f"After conversion, vc type: {type(vc)}, shape: {np.shape(vc) if hasattr(vc, 'shape') else 'scalar'}")
             raise
         
         self.dw = float(self.dw)
-        reward = -np.abs(self.dw)
+        base_reward = -np.abs(self.dw)
+        # action_magnitude = np.abs(dw_piezo)
+        # action_reward = 0.01 * action_magnitude
+        # total_reward = base_reward + action_reward
+        # reward = total_reward
+        dw_improvement = np.abs(prev_dw) - np.abs(self.dw)
+        if dw_improvement > 0:
+            action_magnitude = np.abs(dw_piezo)
+            improvement_reward = 0.01 * action_magnitude * dw_improvement
+            reward = float(base_reward + improvement_reward)
+        else:
+            reward = float(base_reward)
+        
         terminated = False
         truncated = False
-        info = {}
+        info = {
+            "state_m": self.state_m.tolist(),
+            "state_vc": self.state_vc,
+            "dw_micr": dw_micr,
+            "base_reward": base_reward,
+            "total_reward": reward
+        }
 
         return observation, reward, terminated, truncated, info
 
