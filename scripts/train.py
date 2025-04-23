@@ -67,6 +67,7 @@ def main(args):
         "MlpPolicy",
         env,
         verbose=1,
+        ent_coef=config["train"]["ent_coef"],
         tensorboard_log=config["logging"]["tensorboard_dir"],
         learning_rate=config["train"]["learning_rate"],
         n_steps=config["train"]["n_steps"],

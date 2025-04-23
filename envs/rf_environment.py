@@ -8,7 +8,7 @@ from llrflibs.rf_control import *
 class RFEnvironment(gym.Env):
     def __init__(self, config):
         # 定义动作和观测空间
-        self.action_space = gym.spaces.Box(low=-1e3, high=1e3, shape=(1,), dtype=np.float32)
+        self.action_space = gym.spaces.Box(low=-1e4, high=1e4, shape=(1,), dtype=np.float32)
         self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(4,), dtype=np.float32)
 
         # 通用参数
