@@ -105,7 +105,7 @@ For any inquiries or support, you can reach out through the following channels:
 - **GitHub Issues**: [Submit an issue](https://github.com/iuming/SRF_FC_RL/issues)
 - **Discussion Forum**: [GitHub Discussions](https://github.com/iuming/SRF_FC_RL/discussions)
 
-Feel free to customize this template to fit the specific needs of your project. If you have any specific requirements or need further assistance, please let me know. I'd be happy to help!
+Thank you for your interest in this project, and we hope you find it helpful and inspiring!
 
 ## Star History
 
