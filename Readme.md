@@ -57,8 +57,41 @@ python scripts/evaluate.py --config config/config.yaml
 3. Visualization results will automatically pop up after evaluation is completed.
 
 ## Contributing
+We welcome contributions to this project! To contribute, please follow these steps:
 
-If you want others to contribute to the project, provide contribution guidelines and contact information.
+1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create your own copy.
+2. **Clone the Repository**: Clone your forked repository to your local machine.
+    ```bash
+    git clone https://github.com/your-username/SRF_FC_RL.git
+    cd SRF_FC_RL
+    ```
+3. **Create a Branch**: Create a new branch for your feature or bug fix.
+    ```bash
+    git checkout -b feature-name
+    ```
+4. **Make Changes**: Implement your changes and commit them with clear and concise commit messages.
+    ```bash
+    git add .
+    git commit -m "Description of changes"
+    ```
+5. **Push Changes**: Push your changes to your forked repository.
+    ```bash
+    git push origin feature-name
+    ```
+6. **Submit a Pull Request**: Open a pull request to the main repository. Provide a detailed description of your changes and why they should be merged.
+
+### Contribution Guidelines
+- Ensure your code follows the project's coding standards.
+- Write clear and concise documentation for any new features or changes.
+- Test your changes thoroughly before submitting a pull request.
+- Be respectful and constructive in code reviews and discussions.
+
+### Contact
+If you have any questions or need assistance, feel free to reach out:
+- **Email**: [ming-1018@foxmail.com](mailto:ming-1018@foxmail.com)
+- **GitHub Issues**: [Open an issue](https://github.com/iuming/SRF_FC_RL/issues)
+
+We appreciate your interest in contributing and look forward to your input!
 
 ## License
 
@@ -66,7 +99,11 @@ This repository is licensed under the [LICENSE](LICENSE).
 
 ## Contact
 
-Provide contact information so users can reach out to you.
+For any inquiries or support, you can reach out through the following channels:
+
+- **Email**: [ming-1018@foxmail.com](mailto:ming-1018@foxmail.com)
+- **GitHub Issues**: [Submit an issue](https://github.com/iuming/SRF_FC_RL/issues)
+- **Discussion Forum**: [GitHub Discussions](https://github.com/iuming/SRF_FC_RL/discussions)
 
 Feel free to customize this template to fit the specific needs of your project. If you have any specific requirements or need further assistance, please let me know. I'd be happy to help!
 
