@@ -12,6 +12,7 @@ import yaml
 from stable_baselines3 import PPO
 from envs.rf_environment import RFEnvironment
 from stable_baselines3.common.callbacks import BaseCallback
+from stable_baselines3.common.vec_env import SubprocVecEnv
 
 class CustomTensorboardCallback(BaseCallback):
     def __init__(self, verbose=0):
@@ -59,8 +60,18 @@ def main(args):
         config = yaml.safe_load(f)
     
     # 创建环境
-    env = RFEnvironment(config["env"])
-    env = gym.wrappers.TimeLimit(env, max_episode_steps=config["env"]["max_episode_steps"])
+    # env = RFEnvironment(config["env"])
+    # env = gym.wrappers.TimeLimit(env, max_episode_steps=config["env"]["max_episode_steps"])
+
+    # 创建并行环境
+    def make_env():
+        def _init():
+            env = RFEnvironment(config["env"])
+            env = gym.wrappers.TimeLimit(env, max_episode_steps=config["env"]["max_episode_steps"])
+            return env
+        return _init
+
+    env = SubprocVecEnv([make_env() for _ in range(config["train"]["n_envs"])])
     
     # 初始化模型
     model = PPO(
