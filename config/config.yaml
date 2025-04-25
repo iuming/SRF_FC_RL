@@ -1,6 +1,6 @@
 # 训练配置
 train:
-  total_timesteps: 1000000
+  total_timesteps: 10000000
   learning_rate: 0.004500352085918983
   n_steps: 640
   batch_size: 256
