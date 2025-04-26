@@ -9,7 +9,7 @@ class RFEnvironment(gym.Env):
     def __init__(self, config):
         # 定义动作和观测空间
         self.action_space = gym.spaces.Box(low=-1e4, high=1e4, shape=(1,), dtype=np.float32)
-        self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(10,), dtype=np.float32)
+        self.observation_space = gym.spaces.Box(low=-np.inf, high=np.inf, shape=(11,), dtype=np.float32)
         self.action_history = [np.zeros(1) for _ in range(3)]
 
         # 通用参数
@@ -93,7 +93,7 @@ class RFEnvironment(gym.Env):
         action_history_array = np.ravel(action_history_array)
 
 
-        observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array], dtype=np.float32)
+        observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array, 0.0], dtype=np.float32)
         info = {}
         return observation, info
 
@@ -130,7 +130,7 @@ class RFEnvironment(gym.Env):
             action_history_array = np.concatenate(self.action_history)
             # action_history_array = action_history_array.flatten()
             action_history_array = np.ravel(action_history_array)
-            observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array], dtype=np.float32)
+            observation = np.array([np.real(S2), np.imag(S2), np.real(vc), np.imag(vc), np.real(vr), np.imag(vr), dw_rate, *action_history_array, float(self.buf_id)], dtype=np.float32)
         except ValueError as e:
             print(f"Error creating observation array: {e}")
             print(f"After conversion, vc type: {type(vc)}, shape: {np.shape(vc) if hasattr(vc, 'shape') else 'scalar'}")
