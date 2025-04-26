@@ -7,7 +7,7 @@ train:
   n_epochs: 4
   gamma: 0.9618684267875346
   ent_coef: 0.013816254292753417
-  n_envs: 8
+  n_envs: 24
   seed: 42
 
 # 环境配置

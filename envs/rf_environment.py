@@ -137,7 +137,7 @@ class RFEnvironment(gym.Env):
             raise
         
         self.dw = float(self.dw)
-        base_reward = 2.0 * np.pi * 1000 - np.abs(self.dw)
+        base_reward = 2.0 * np.pi * 250 - np.abs(self.dw)
         # action_magnitude = np.abs(dw_piezo)
         # action_reward = 0.01 * action_magnitude
         # total_reward = base_reward + action_reward
