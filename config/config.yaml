@@ -1,13 +1,13 @@
 # 训练配置
 train:
-  total_timesteps: 100_000_000
+  total_timesteps: 1_000_000
   learning_rate: 0.004500352085918983
   n_steps: 640
   batch_size: 256
   n_epochs: 4
   gamma: 0.9618684267875346
   ent_coef: 0.013816254292753417
-  n_envs: 32
+  n_envs: 
   seed: 42
 
 # 环境配置
