@@ -86,7 +86,7 @@ def main(args):
         n_epochs=config["train"]["n_epochs"],
         gamma=config["train"]["gamma"],
         seed=config["train"]["seed"],
-        device="cpu" 
+        device=config["train"]["device"] 
     )
     
     # 执行训练
