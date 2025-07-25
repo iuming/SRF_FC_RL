@@ -3,7 +3,7 @@ RF Cavity Control Training Script
 
 Filename: train_rf_cavity.py
 Author: Ming Liu
-Email: ming.liu@example.com
+Email: ming-1018@foxmail.com
 GitHub: https://github.com/iuming
 Created: 2025-07-25
 Version: 1.0.0

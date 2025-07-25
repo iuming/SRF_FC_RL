@@ -1,6 +1,6 @@
-# Contributing to RF Cavity Control System
+# Contributing to SRF FC RL
 
-Thank you for your interest in contributing to the RF Cavity Control System! This document provides guidelines for contributing to this project.
+Thank you for your interest in contributing to the Superconducting RadioFrequency cavity Frequency Control by Reinforcement Learning (SRF FC RL) project! This document provides guidelines for contributing to this project.
 
 ## Getting Started
 
@@ -15,8 +15,8 @@ Thank you for your interest in contributing to the RF Cavity Control System! Thi
 1. **Fork the repository**
    ```bash
    # Fork on GitHub, then clone your fork
-   git clone https://github.com/YOUR_USERNAME/ML_Learning.git
-   cd ML_Learning/RL_Learning/custom/20250725
+   git clone https://github.com/YOUR_USERNAME/SRF_FC_RL.git
+   cd SRF_FC_RL
    ```
 
 2. **Set up development environment**
@@ -272,7 +272,7 @@ If you need help:
 1. **Check documentation**: README, code comments, docstrings
 2. **Search issues**: Someone might have asked the same question
 3. **Create an issue**: For questions or problems
-4. **Contact maintainer**: ming.liu@example.com
+4. **Contact maintainer**: ming-1018@foxmail.com
 
 ## Code of Conduct
 

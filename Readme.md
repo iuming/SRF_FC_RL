@@ -1,8 +1,12 @@
 ![# SRF FC RL](assets/logo.png)
+
 [![GitHub Repo stars](https://img.shields.io/github/stars/iuming/SRF_FC_RL?style=social)](https://github.com/iuming/SRF_FC_RL/stargazers)
 [![GitHub Code License](https://img.shields.io/github/license/iuming/SRF_FC_RL)](LICENSE)
 [![GitHub last commit](https://img.shields.io/github/last-commit/iuming/SRF_FC_RL)](https://github.com/iuming/SRF_FC_RL/commits/master)
 [![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/iuming/SRF_FC_RL/pulls)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![CI](https://github.com/iuming/SRF_FC_RL/workflows/CI/badge.svg)](https://github.com/iuming/SRF_FC_RL/actions)
+[![Documentation](https://img.shields.io/badge/docs-user--manual-green.svg)](docs/user_manual.rst)
 
 # Superconducting RadioFrequency cavity Frequency Control by Reinforcement Learning
 
@@ -334,8 +338,9 @@ The trained model aims to:
 ## Author & Contact
 
 **Author**: Ming Liu  
-**Email**: ming.liu@example.com  
+**Email**: ming-1018@foxmail.com  
 **GitHub**: https://github.com/iuming  
+**Repository**: https://github.com/iuming/SRF_FC_RL  
 **Created**: 2025-07-25  
 **Version**: 1.0.0  
 
@@ -343,4 +348,4 @@ For questions, suggestions, or collaboration opportunities, please feel free to 
 
 ## License
 
-This project is part of the ML_Learning repository and follows the same licensing terms.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

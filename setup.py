@@ -26,11 +26,11 @@ setup(
     name="rf-cavity-control",
     version="1.0.0",
     author="Ming Liu",
-    author_email="ming.liu@example.com",
+    author_email="ming-1018@foxmail.com",
     description="A reinforcement learning system for RF cavity control using PPO",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/iuming/ML_Learning",
+    url="https://github.com/iuming/SRF_FC_RL",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -68,8 +68,8 @@ setup(
     },
     keywords="reinforcement-learning rf-cavity control ppo physics simulation",
     project_urls={
-        "Bug Reports": "https://github.com/iuming/ML_Learning/issues",
-        "Source": "https://github.com/iuming/ML_Learning",
-        "Documentation": "https://github.com/iuming/ML_Learning/blob/main/RL_Learning/custom/20250725/README.md",
+        "Bug Reports": "https://github.com/iuming/SRF_FC_RL/issues",
+        "Source": "https://github.com/iuming/SRF_FC_RL",
+        "Documentation": "https://github.com/iuming/SRF_FC_RL/blob/main/docs/user_manual.rst",
     },
 )

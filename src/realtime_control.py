@@ -1,11 +1,16 @@
 """
-Real-time Control Wrapper for RF Cavity Control System
+Real-time Control Wrapper for RF Cavity Environment
 
 Filename: realtime_control.py
 Author: Ming Liu
-Email: ming.liu@example.com
+Email: ming-1018@foxmail.com
 GitHub: https://github.com/iuming
 Created: 2025-07-25
+Version: 1.0.0
+
+Description:
+    This module provides a real-time control wrapper for the RF cavity control
+    environment, enabling live monitoring, manual intervention, and automatic
 Version: 1.0.0
 
 Description:
