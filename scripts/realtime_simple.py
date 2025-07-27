@@ -3,7 +3,7 @@ Simple Real-time RF Cavity Control Demo
 
 Filename: realtime_simple.py
 Author: Ming Liu
-Email: ming.liu@example.com
+Email: ming-1018@foxmail.com
 GitHub: https://github.com/iuming
 Created: 2025-07-25
 Version: 1.0.0

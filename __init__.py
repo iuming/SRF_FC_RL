@@ -5,7 +5,7 @@ A reinforcement learning system for controlling RF cavity frequency
 using PPO (Proximal Policy Optimization) algorithm.
 
 Author: Ming Liu
-Email: ming.liu@example.com
+Email: ming-1018@foxmail.com
 GitHub: https://github.com/iuming
 Created: 2025-07-25
 Version: 1.0.0
@@ -13,7 +13,7 @@ Version: 1.0.0
 
 __version__ = "1.0.0"
 __author__ = "Ming Liu"
-__email__ = "ming.liu@example.com"
+__email__ = "ming-1018@foxmail.com"
 
 # Import main components
 from src import RFCavityControlEnv, RealTimeControlWrapper
