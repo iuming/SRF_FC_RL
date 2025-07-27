@@ -73,7 +73,7 @@ def main():
                        help='Command to execute')
     parser.add_argument('--model-path', type=str, default='./best_model/best_model.zip',
                        help='Path to model file (for test command)')
-    parser.add_argument('--device', type=str, default='cpu', choices=['cpu', 'cuda'],
+    parser.add_argument('--device', type=str, default='cuda', choices=['cpu', 'cuda'],
                        help='Device to use for training/testing')
     
     args = parser.parse_args()
@@ -82,13 +82,13 @@ def main():
         print("Starting training...")
         os.chdir(os.path.join(project_root, 'scripts'))
         import train_rf_cavity
-        train_rf_cavity.main()
+        train_rf_cavity.main(device=args.device)
         
     elif args.command == 'test':
         print("Starting testing...")
         os.chdir(os.path.join(project_root, 'scripts'))
         import test_rf_cavity
-        test_rf_cavity.main()
+        test_rf_cavity.main(device=args.device)
         
     elif args.command == 'env-test':
         print("Testing environment...")

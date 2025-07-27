@@ -284,11 +284,13 @@ def print_performance_summary(data):
     print(f"\nOverall Performance Rating: {performance}")
 
 
-def main():
+def main(device='cpu'):
     """Main testing function"""
     print("="*60)
     print("RF Cavity Control - Model Testing and Evaluation")
     print("="*60)
+    print(f"Using device: {device}")
+    print()
     
     # Model path - try different locations
     model_paths = [
@@ -301,7 +303,7 @@ def main():
     model = None
     for path in model_paths:
         if os.path.exists(path):
-            model = load_model(path)
+            model = load_model(path, device=device)
             if model is not None:
                 break
     

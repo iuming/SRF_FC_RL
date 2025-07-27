@@ -85,15 +85,15 @@ TRAINING_CONFIG = {
     # PPO Parameters
     'algorithm': 'PPO',
     'policy': 'MlpPolicy',
-    'learning_rate': 1e-4,
+    'learning_rate': 3e-4,  # Slightly higher learning rate for CUDA
     'n_steps': 32768,
-    'batch_size': 512,
-    'n_epochs': 20,
+    'batch_size': 1024,  # Larger batch size for CUDA
+    'n_epochs': 10,  # Reduced epochs for faster iteration
     'gamma': 0.99,
     'gae_lambda': 0.95,
     'clip_range': 0.2,
     'ent_coef': 0.001,
-    'device': 'cpu',  # Use CPU for better stability
+    'device': 'cuda',  # Use CUDA for faster training
     
     # Environment settings
     'n_envs': 4,

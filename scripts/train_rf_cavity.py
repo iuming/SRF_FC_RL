@@ -119,8 +119,12 @@ def setup_directories():
         os.makedirs(dir_path, exist_ok=True)
 
 
-def main():
+def main(device=None):
     """Main training function"""
+    # Use provided device or fall back to config
+    if device is not None:
+        TRAINING_CONFIG['device'] = device
+        
     print("="*60)
     print("RF Cavity Control - Reinforcement Learning Training")
     print("="*60)
